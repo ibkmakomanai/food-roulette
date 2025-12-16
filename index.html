@@ -62,9 +62,16 @@
       h1 {
         font-family: "Mochiy Pop One", sans-serif;
         color: var(--primary);
-        font-size: 2rem;
+        font-size: 1.5rem; /* 約24px */
         text-shadow: 2px 2px 0px #fff;
         margin-bottom: 10px;
+      }
+
+      /* 画面幅が600px以上（タブレット・PC）になったら上書き */
+      @media (min-width: 600px) {
+        h1 {
+          font-size: 3rem; /* 約48px */
+        }
       }
 
       .container {
@@ -382,8 +389,43 @@
         text-align: center;
         padding: 10px;
       }
+      /* フッター全体のスタイル */
+      footer {
+        width: 100%;
+        margin-top: auto; /* これが重要：自動で一番下まで押し下げる */
+        background-color: #eee;
+        color: #666;
+        padding: 20px 0;
+        font-size: 0.8rem;
+      }
+
+      .footer-content {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      /* リンクの色 */
+      footer a {
+        color: var(--primary); /* テーマカラーに合わせる */
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .footer-links {
+        margin: 10px 0;
+      }
+
+      .copyright {
+        color: #999;
+        font-size: 0.7rem;
+        margin-top: 10px;
+      }
     </style>
   </head>
+
   <body>
     <div class="bg-pattern"></div>
 
@@ -753,6 +795,27 @@
       }
     </script>
   </body>
+  <footer>
+    <div class="footer-links">
+      開発者:
+      <a href="https://twitter.com/ibkmakomanai" target="_blank"
+        >@ibkmakomanai</a
+      >
+    </div>
+
+    <div class="disclaimer">
+      <p><strong>【プライバシーポリシー】</strong></p>
+      <p>
+        当サイトは、現在地周辺の飲食店を検索するために位置情報を利用しますが、取得した位置情報は利用者の端末内でのみ処理され、サーバー等へ保存・送信されることは一切ありません。
+      </p>
+
+      <p><strong>【免責事項】</strong></p>
+      <p>
+        掲載されている店舗情報はGoogle Maps
+        APIを利用しています。営業時間や定休日が実際と異なる場合がありますので、来店の際は店舗へ直接ご確認ください。当サイトの利用により生じた損害について、運営者は一切の責任を負いません。
+      </p>
+    </div>
+
+    <div style="margin-top: 10px">&copy; 2025 Food Roulette.</div>
+  </footer>
 </html>
-
-
