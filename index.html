@@ -809,8 +809,7 @@
         document.getElementById("map-link").href = mapUrl;
 
         // X (Twitter) シェアリンク作成
-        const shareText = `今日の運命のランチは「${place.name}」に決まりました！🍽️
-#今日食べルーレット`;
+        const shareText = `今日の運命のランチは「${place.name}」に決まりました！🍽️ #今日食べルーレット`;
         const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
           shareText
         )}&url=${encodeURIComponent(location.href)}`;
