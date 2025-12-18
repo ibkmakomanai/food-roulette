@@ -525,9 +525,12 @@
         <a id="share-link" href="#" target="_blank" class="btn-sub btn-share">𝕏 結果をシェア</a>
         
       </div>
-<a href="https://px.a8.net/svt/ejp?a8mat=45KHCS+YJ5V6+4EI4+BYDTT" rel="nofollow">
-<img border="0" width="320" height="50" alt="" src="https://www22.a8.net/svt/bgt?aid=251218396058&wid=001&eno=01&mid=s00000020542002008000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45KHCS+YJ5V6+4EI4+BYDTT" alt="">
+
+      <div id="result-ad-area" style="display: none; margin-top: 20px;">
+        <a href="https://px.a8.net/svt/ejp?a8mat=45KHCS+YJ5V6+4EI4+BYDTT" rel="nofollow">
+          <img border="0" width="320" height="50" alt="" src="https://www22.a8.net/svt/bgt?aid=251218396058&wid=001&eno=01&mid=s00000020542002008000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45KHCS+YJ5V6+4EI4+BYDTT" alt="">
+      </div>
       <!-- シェア画像生成用Canvas（非表示） -->
       <canvas id="share-canvas" width="1200" height="630" style="display: none;"></canvas>
 
@@ -827,6 +830,7 @@
         startBtn.innerText = "もう一度やる";
         startBtn.disabled = false;
         actionArea.style.display = "flex";
+        document.getElementById('result-ad-area').style.display = 'block';
 
         console.log("ボタン表示:", actionArea.style.display); // デバッグ用
 
