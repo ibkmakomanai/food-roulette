@@ -76,7 +76,7 @@
       }
 
       .htags{
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
 
       /* 画面幅が600px以上（タブレット・PC）になったら上書き */
@@ -87,6 +87,17 @@
         h2 {
           font-size: 2rem; /* 約48px */
         }
+      }
+
+      /* .htagsクラスの中にある h1 と h2 の余白を調整する */
+      .htags h1 {
+        margin-bottom: 0px; /* タイトルの下の余白をなくす */
+        line-height: 1.2;   /* 行間も少し詰める */
+      }
+      
+      .htags h2 {
+        margin-top: 5px;    /* サブタイトルの上の余白を5pxにする（0pxにするともっと近づきます） */
+        line-height: 1.2;
       }
 
       .container {
@@ -990,6 +1001,7 @@
     </footer>
   </body>
 </html>
+
 
 
 
