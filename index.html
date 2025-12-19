@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>どこ食べルーレット | ルーレットで外食を決めよう！</title>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>どこ食べルーレット | ルーレットで外食を決めよう！</title>
+    <title>どこ食べルーレット</title>
 
     <link
       rel="icon"
@@ -969,96 +965,6 @@
         resultMeta.innerHTML = msg;
         startBtn.disabled = false;
         startBtn.innerText = "もう一度やる";
-      }
-
-      // シェア用画像を生成する関数
-      function generateShareImage(placeName) {
-        const canvas = document.getElementById("share-canvas");
-        const ctx = canvas.getContext("2d");
-
-        // 背景グラデーション
-        const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
-        gradient.addColorStop(0, "#fff5f5");
-        gradient.addColorStop(0.5, "#fff9e6");
-        gradient.addColorStop(1, "#f0fff4");
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, 1200, 630);
-
-        // 装飾的な食べ物絵文字を描画
-        ctx.font = "60px serif";
-        ctx.globalAlpha = 0.25;
-        const emojis = [
-          { text: "🍜", x: 50, y: 80 },
-          { text: "🍔", x: 1080, y: 100 },
-          { text: "🍣", x: 100, y: 550 },
-          { text: "🍝", x: 1050, y: 530 },
-          { text: "🍛", x: 200, y: 200 },
-          { text: "🍱", x: 950, y: 450 },
-        ];
-        emojis.forEach((e) => ctx.fillText(e.text, e.x, e.y));
-        ctx.globalAlpha = 1;
-
-        // メインの絵文字
-        ctx.font = "100px serif";
-        ctx.textAlign = "center";
-        ctx.fillText("🍙", 600, 140);
-
-        // 「決まりました！」テキスト
-        ctx.font = 'bold 48px "Helvetica Neue", Arial, sans-serif';
-        ctx.fillStyle = "#ff6b6b";
-        ctx.textAlign = "center";
-        ctx.fillText("今日のランチはここに決まり！", 600, 230);
-
-        // 店名の背景
-        ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
-        ctx.beginPath();
-        ctx.roundRect(100, 270, 1000, 180, 20);
-        ctx.fill();
-        ctx.strokeStyle = "#ff6b6b";
-        ctx.lineWidth = 4;
-        ctx.stroke();
-
-        // 店名
-        ctx.fillStyle = "#2d3436";
-        ctx.font = 'bold 56px "Helvetica Neue", Arial, sans-serif';
-
-        // 店名が長い場合は縮小
-        let fontSize = 56;
-        ctx.font = `bold ${fontSize}px "Helvetica Neue", Arial, sans-serif`;
-        while (ctx.measureText(placeName).width > 900 && fontSize > 28) {
-          fontSize -= 4;
-          ctx.font = `bold ${fontSize}px "Helvetica Neue", Arial, sans-serif`;
-        }
-
-        ctx.fillText(placeName, 600, 380);
-
-        // 王冠
-        ctx.font = "70px serif";
-        ctx.fillText("👑", 600, 310);
-
-        // 下部のタグ
-        ctx.fillStyle = "#ff6b6b";
-        ctx.beginPath();
-        ctx.roundRect(400, 500, 400, 50, 25);
-        ctx.fill();
-
-        ctx.fillStyle = "white";
-        ctx.font = 'bold 22px "Helvetica Neue", Arial, sans-serif';
-        ctx.fillText("#どこ食べルーレット", 600, 535);
-
-        // サイト名
-        ctx.fillStyle = "#888";
-        ctx.font = '20px "Helvetica Neue", Arial, sans-serif';
-        ctx.fillText("運命のランチ決定機", 600, 600);
-      }
-
-      // 画像を保存する関数
-      function saveShareImage() {
-        const canvas = document.getElementById("share-canvas");
-        const link = document.createElement("a");
-        link.download = "今日のランチ.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
       }
     </script>
 
