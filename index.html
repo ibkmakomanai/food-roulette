@@ -52,7 +52,6 @@
       rel="stylesheet"
     />
 
-
     <meta
       name="google-site-verification"
       content="PMNbiqRRvyNg5xDd92y6Uw9gKxENMv1S2agnyT-RbkM"
@@ -940,9 +939,6 @@
           shareText
         )}&url=${encodeURIComponent(location.href)}`;
         document.getElementById("share-link").href = shareUrl;
-
-        // シェア画像を生成
-        generateShareImage(place.name);
 
         // ボタン類の更新（リンク設定後に表示）
         startBtn.innerText = "もう一度やる";
