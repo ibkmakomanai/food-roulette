@@ -83,13 +83,18 @@
         --shadow: rgba(0, 0, 0, 0.15);
       }
 
+      /* スマホでの意図しない横スクロールを防止 */
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Zen Maru Gothic", sans-serif;
         background-color: var(--bg);
         color: var(--text);
         text-align: center;
         margin: 0;
-        padding: 20px;
+        padding: 20px 15px; /* スマホ用に左右の余白を少し調整 */
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -100,37 +105,40 @@
       h1 {
         font-family: "Mochiy Pop One", sans-serif;
         color: var(--primary);
-        font-size: 2.25rem;
+        font-size: 1.8rem; /* スマホ画面で改行されないように少し小さく */
         text-shadow: 2px 2px 0px #fff;
+        margin-bottom: 0px;
+        line-height: 1.4;
       }
+      
       h2 {
         font-family: "Mochiy Pop One", sans-serif;
-        color: var(--text); /* 休止中なので少し落ち着いた色に */
-        font-size: 1rem;
+        color: var(--text);
+        font-size: 0.95rem;
         text-shadow: 2px 2px 0px #fff;
+        margin-top: 5px;
+        line-height: 1.4;
       }
 
       .htags {
-        margin-bottom: 5px;
+        margin-bottom: 15px;
+        width: 100%;
       }
 
+      /* タブレット・PC向け（画面幅600px以上）のスタイル */
       @media (min-width: 600px) {
+        body {
+          padding: 20px;
+        }
         h1 {
-          font-size: 3rem;
+          font-size: 2.8rem;
         }
         h2 {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
         }
-      }
-
-      .htags h1 {
-        margin-bottom: 0px;
-        line-height: 1.5;
-      }
-
-      .htags h2 {
-        margin-top: 5px;
-        line-height: 1.5;
+        .container {
+          padding: 40px 30px;
+        }
       }
 
       .container {
@@ -138,53 +146,46 @@
         width: 100%;
         background: white;
         border-radius: 20px;
-        padding: 40px 20px;
+        padding: 30px 15px; /* スマホ用に上下左右の余白を最適化 */
         box-shadow: 0 10px 25px var(--shadow);
         margin-bottom: 20px;
       }
 
-      /* 休止メッセージ用スタイル */
       .apology-icon {
-        font-size: 4rem;
+        font-size: 3.5rem; /* スマホ向けに少し調整 */
         margin-bottom: 10px;
       }
 
       .apology-title {
         font-family: "Mochiy Pop One", sans-serif;
         color: var(--primary);
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 20px;
       }
 
       .apology-text {
         line-height: 1.8;
-        font-size: 1.05rem;
+        font-size: 0.95rem; /* スマホで読みやすいサイズ */
         margin-bottom: 20px;
-      }
-
-      .notice-box {
-        background: #fff3cd;
-        border-radius: 10px;
-        padding: 15px;
-        font-size: 0.9rem;
-        color: #856404;
-        margin-top: 30px;
+        padding: 0 10px; /* テキストが端に寄りすぎないように */
       }
 
       .btn-share {
         background: #000;
         color: white;
         box-shadow: 0 4px 0 #333;
-        padding: 10px 20px;
+        padding: 15px 20px; /* タップしやすいように上下を広めに */
         border-radius: 10px;
         text-decoration: none;
         font-weight: bold;
-        display: inline-block;
-        font-size: 0.9rem;
+        display: block; /* 横幅いっぱいに広げやすくする */
+        width: 100%;
+        max-width: 300px; /* 広がりすぎ防止 */
+        margin: 20px auto 0;
+        font-size: 0.95rem;
         transition: transform 0.2s;
         border: none;
         cursor: pointer;
-        margin-top: 20px;
       }
 
       .btn-share:active {
@@ -285,7 +286,7 @@
         <a href="https://twitter.com/ibkmakomanai" target="_blank">@ibkmakomanai</a>
       </div>
 
-      <div class="footer-content" style="text-align: left; max-width: 500px; margin: 0 auto;">
+      <div class="footer-content" style="text-align: left;">
         <p style="text-align: center;"><strong>【どこ食べルーレットとは？】</strong></p>
         <p>
           「今日のランチ、どこに食べに行く？」と迷った時に、現在地周辺の飲食店をランダムで決定するWebアプリです。現在はお休み中です。
